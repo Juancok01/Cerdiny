@@ -12,3 +12,7 @@ El modelo de datos está diseñado con un enfoque OLTP clásico, garantizando la
 4. **`movimientos`**: Tabla transaccional o libro mayor que registra todas las operaciones (volumen de 50k+ registros).
 
 ![Diagrama Entidad-Relación de Cerdiny](assets/diagrama_er.png)
+
+## 🛠️ Archivos en este directorio
+
+- `DDL_Cerdiny.sql`: Script principal que contiene las sentencias `CREATE TABLE`, definiciones de `PRIMARY KEY`, `FOREIGN KEY` y restricciones `NOT NULL`.
