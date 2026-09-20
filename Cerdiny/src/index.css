@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-flotar: flotar 1.5s ease-in-out infinite alternate;
+  --color-cerdiny: #00ff66;
+  --color-cerdiny-hover: #00e65c;
+  --color-cerdiny-muted: #00ff6626;
+
+  @keyframes flotar {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(15px);
+    }
+  }
+}
+
+@layer components {
+  .home-carousel {
+    width: 20vw;
+    height: 50vh;
+  }
+
+  @media (max-width: 70em) {
+    .home-carousel {
+      height: 40vh;
+      padding: 15px 0;
+    }
+  }
+
+  @media (max-width: 64em) {
+    .home-carousel {
+      height: 50vh;
+      width: 30vw;
+    }
+  }
+
+  @media (max-width: 48em) {
+    .home-carousel {
+      height: 35vh;
+      width: 40vw;
+    }
+  }
+
+  @media (max-width: 30em) {
+    .home-carousel {
+      height: 35vh;
+      width: 40vw;
+    }
+  }
+
+  .home-carousel .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-carousel .swiper-slide {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .home-carousel .swiper-slide img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .home-carousel .swiper-button-next,
+  .home-carousel .swiper-button-prev {
+    width: 4rem;
+    top: 60%;
+    background-image: url("./assets/Arrow.svg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .home-carousel .swiper-button-next::after,
+  .home-carousel .swiper-button-prev::after {
+    display: none;
+  }
+
+  .home-carousel .swiper-button-prev {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 64em) {
+    .home-carousel .swiper-button-next,
+    .home-carousel .swiper-button-prev {
+      width: 3rem;
+    }
+  }
+
+  @media (max-width: 30em) {
+    .home-carousel .swiper-button-next,
+    .home-carousel .swiper-button-prev {
+      width: 2rem;
+    }
+  }
+
+  .cerdiny-bg {
+    background: radial-gradient(
+        ellipse 120% 80% at 50% -20%,
+        rgba(34, 197, 94, 0.12),
+        transparent 55%
+      ),
+      linear-gradient(165deg, #050908 0%, #0a1612 45%, #060b09 100%);
+  }
+
+  .login-card {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(17, 36, 28, 0.98) 0%,
+      rgba(10, 22, 18, 0.99) 100%
+    );
+    border: 1px solid rgba(74, 222, 128, 0.12);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 24px 48px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(74, 222, 128, 0.08);
+  }
+
+  .login-card::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #4ade80,
+      #86efac,
+      #4ade80,
+      transparent
+    );
+    box-shadow: 0 0 16px rgba(74, 222, 128, 0.45);
+  }
+
+  .input-dark:focus {
+    outline: none;
+    border-color: rgba(74, 222, 128, 0.45);
+    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.2);
+  }
+}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(55, 55, 55, 0.2);
+  filter: blur(10px);
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(84, 84, 84, 0.5);
+  border-radius: 10px;
+  
+}
