@@ -1,0 +1,5 @@
+﻿id_tipo_pago,nombre
+1,pago_tarjeta
+2,transferencia
+3,nomina
+4,retiro
